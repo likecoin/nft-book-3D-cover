@@ -12,7 +12,7 @@ function preload() {
   myShader = loadShader("shader.vert", "shader.frag");
 
   bg = loadImage("./01_background/bg-1.jpg")
-  matcap = loadImage("./02_coin-texture/sliver.jpg");
+  matcap = loadImage("./02_coin-texture/sliver.png");
   watermark = loadImage("./03_watermark/text-1.png")
 
   obj = loadModel("coin.obj")
