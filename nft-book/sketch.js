@@ -2,7 +2,8 @@ let myShader;
 let matcap;
 let obj;
 
-let bg;
+let bg = [];
+let bgIndex;
 let watermark;
 
 const NUMBER_OF_IMAGE = 1000;
@@ -13,7 +14,9 @@ let capturer;
 function preload() {
   myShader = loadShader("shader.vert", "shader.frag");
 
-  bg = loadImage("./01_background/bg-1.jpg")
+  bg[0] = loadImage("./01_background/bg-1.jpg")
+  bg[1] = loadImage("./01_background/bg-2.jpg")
+  bg[2] = loadImage("./01_background/bg-3.jpg")
   matcap = loadImage("./02_coin-texture/sliver.png");
   watermark = loadImage("./03_watermark/text-1.png")
 
@@ -24,11 +27,17 @@ function setup() {
   // shaders require WEBGL mode to work
   createCanvas(600, 800, WEBGL);
   noStroke();
-
+  isCentered = random(0, 1) > 0.5
+  isMirrored = random(0, 1) > 0.5
+  bgIndex = Math.floor(random(0, 3));
   randomA = random(0.001, 0.01)
   randomB = random(0.001, 0.01)
-  randomC = random(0.001, 0.01)
-  randomD = random(0.001, 0.01)
+  randomC = isMirrored ? -randomA : random(0.001, 0.01)
+  randomD = isMirrored ? -randomB : random(0.001, 0.01)
+  randomE = isCentered ? 0 : random(-200, 200)
+  randomF = isCentered ? 0 : random(-200, 200)
+  randomG = isCentered ? 0 : random(-200, 200)
+  randomH = isCentered ? 0 : random(-200, 200)
   capturer = new CCapture({
     framerate: 12,
     format: "webm",
@@ -44,7 +53,7 @@ function setup() {
 function draw() {
   background(0, 0, 0, 1);
   push();
-  texture(bg);
+  texture(bg[bgIndex]);
   translate(0, 0, -300);
   scale(1.45);
   plane(600, 800);
@@ -58,7 +67,7 @@ function draw() {
   myShader.setUniform("uMatcapTexture", matcap);
 
   push()
-  translate(0, -(100));
+  translate(randomE, randomF -(100));
   rotateX(currentTick * randomA);
   rotateZ(currentTick * randomB);
   scale(0.83);
@@ -66,7 +75,7 @@ function draw() {
   pop()
 
   push()
-  translate(0, 100);
+  translate(randomG, randomH + 100);
   rotateX(currentTick * randomC);
   rotateZ(currentTick * randomD);
   scale(0.83);
