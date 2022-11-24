@@ -77,6 +77,7 @@ function draw() {
     console.log('finished recording.');
     capturer.stop();
     capturer.save();
+    noLoop();
     return;
   }
 }
