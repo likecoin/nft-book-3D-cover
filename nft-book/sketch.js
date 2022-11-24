@@ -13,14 +13,20 @@ const totalTick = 352;
 let currentTick = 0;
 let capturer;
 
+function getQs() {
+  const params = new URLSearchParams(window.location.search);
+  let index = params.get('index') || 0;
+  let colorIndex = params.get('color') || 0;
+  return { params, index, colorIndex };
+}
+
 function preload() {
   myShader = loadShader("shader.vert", "shader.frag");
 
   bg[0] = loadImage("./01_background/bg-1.jpg")
   bg[1] = loadImage("./01_background/bg-2.jpg")
   bg[2] = loadImage("./01_background/bg-3.jpg")
-  const params = new URLSearchParams(window.location.search);
-  let colorIndex = params.get('color') || 0;
+  const { colorIndex } = getQs();
   matcap = loadImage(`./02_coin-texture/${COLORS[colorIndex]}`);
   watermark[0] = loadImage("./03_watermark/text-1.png")
   watermark[1] = loadImage("./03_watermark/text-2.png")
@@ -44,14 +50,11 @@ function setup() {
   randomF = isCentered ? 0 : random(-200, 200)
   randomG = isCentered ? 0 : random(-200, 200)
   randomH = isCentered ? 0 : random(-200, 200)
+  const { colorIndex, index } = getQs();
   capturer = new CCapture({
     framerate: 12,
-    format: "webm",
-    // If you want to export GIF:
-    // framerate: 60,
-    // format: "gif",
-    // workersPath: "./worker/",
-    // verbose: true,
+    format: 'webm',
+    name: `${COLORS[colorIndex]}-${index}`,
   });
   capturer.start()
 }
@@ -108,17 +111,14 @@ function draw() {
 }
 
 function nextIndex() {
-  const params = new URLSearchParams(window.location.search);
-  let index = params.get('index') || 0;
-  let colorIndex = params.get('color') || 0;
-  if (index > NUMBER_OF_IMAGE[colorIndex]) {
+  let { params, colorIndex, index } = getQs();
+  if (index >= NUMBER_OF_IMAGE[colorIndex]) {
     colorIndex = Number(colorIndex) + 1;
-    if (colorIndex > COLORS.length - 1) return;
+    if (colorIndex >= COLORS.length) return;
     index = -1;
   }
   params.set('index', Number(index) + 1);
   params.set('color', Number(colorIndex));
-  params.toString()
   document.location = `?${params.toString()}`;
 }
 
