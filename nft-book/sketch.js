@@ -102,7 +102,7 @@ function draw() {
     capturer.stop();
     capturer.save();
     noLoop();
-    nextIndex();
+    setTimeout(() => nextIndex(), 2000);
     return;
   }
 }
