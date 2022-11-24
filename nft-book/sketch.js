@@ -6,7 +6,9 @@ let bg = [];
 let bgIndex;
 let watermark;
 
-const NUMBER_OF_IMAGE = 1000;
+const COLORS = ['gold.jpg', 'red.jpg', 'sliver.png'];
+const NUMBER_OF_IMAGE = [9, 99, 999];
+
 const totalTick = 352;
 let currentTick = 0;
 let capturer;
@@ -17,7 +19,9 @@ function preload() {
   bg[0] = loadImage("./01_background/bg-1.jpg")
   bg[1] = loadImage("./01_background/bg-2.jpg")
   bg[2] = loadImage("./01_background/bg-3.jpg")
-  matcap = loadImage("./02_coin-texture/sliver.png");
+  const params = new URLSearchParams(window.location.search);
+  let colorIndex = params.get('color') || 0;
+  matcap = loadImage(`./02_coin-texture/${COLORS[colorIndex]}`);
   watermark = loadImage("./03_watermark/text-1.png")
 
   obj = loadModel("coin.obj")
@@ -103,9 +107,15 @@ function draw() {
 
 function nextIndex() {
   const params = new URLSearchParams(window.location.search);
-  const index = params.get('index') || 0
-  if (index > NUMBER_OF_IMAGE) return;
+  let index = params.get('index') || 0;
+  let colorIndex = params.get('color') || 0;
+  if (index > NUMBER_OF_IMAGE[colorIndex]) {
+    colorIndex = Number(colorIndex) + 1;
+    if (colorIndex > COLORS.length - 1) return;
+    index = -1;
+  }
   params.set('index', Number(index) + 1);
+  params.set('color', Number(colorIndex));
   params.toString()
   document.location = `?${params.toString()}`;
 }
