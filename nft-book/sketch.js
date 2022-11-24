@@ -5,9 +5,10 @@ let obj;
 let bg;
 let watermark;
 
-
+const NUMBER_OF_IMAGE = 1000;
 const totalTick = 352;
 let currentTick = 0;
+let capturer;
 
 function preload() {
   myShader = loadShader("shader.vert", "shader.frag");
@@ -28,7 +29,15 @@ function setup() {
   randomB = random(0.001, 0.01)
   randomC = random(0.001, 0.01)
   randomD = random(0.001, 0.01)
-
+  capturer = new CCapture({
+    framerate: 12,
+    format: "webm",
+    // If you want to export GIF:
+    // framerate: 60,
+    // format: "gif",
+    // workersPath: "./worker/",
+    // verbose: true,
+  });
   capturer.start()
 }
 
@@ -78,8 +87,18 @@ function draw() {
     capturer.stop();
     capturer.save();
     noLoop();
+    nextIndex();
     return;
   }
+}
+
+function nextIndex() {
+  const params = new URLSearchParams(window.location.search);
+  const index = params.get('index') || 0
+  if (index > NUMBER_OF_IMAGE) return;
+  params.set('index', Number(index) + 1);
+  params.toString()
+  document.location = `?${params.toString()}`;
 }
 
 function windowResized() {
