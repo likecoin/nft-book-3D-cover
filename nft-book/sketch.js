@@ -4,7 +4,7 @@ let obj;
 
 let bg = [];
 let bgIndex;
-let watermark;
+let watermark = [];
 
 const COLORS = ['gold.jpg', 'red.jpg', 'sliver.png'];
 const NUMBER_OF_IMAGE = [9, 99, 999];
@@ -22,7 +22,8 @@ function preload() {
   const params = new URLSearchParams(window.location.search);
   let colorIndex = params.get('color') || 0;
   matcap = loadImage(`./02_coin-texture/${COLORS[colorIndex]}`);
-  watermark = loadImage("./03_watermark/text-1.png")
+  watermark[0] = loadImage("./03_watermark/text-1.png")
+  watermark[1] = loadImage("./03_watermark/text-2.png")
 
   obj = loadModel("coin.obj")
 }
@@ -33,6 +34,7 @@ function setup() {
   noStroke();
   isCentered = random(0, 1) > 0.5
   isMirrored = random(0, 1) > 0.5
+  textStyle = Math.floor(random(0, 2));
   bgIndex = Math.floor(random(0, 3));
   randomA = random(0.001, 0.01)
   randomB = random(0.001, 0.01)
@@ -87,7 +89,7 @@ function draw() {
   pop()
 
   push();
-  texture(watermark);
+  texture(watermark[textStyle]);
   translate(0, 0, 300);
   scale(0.55);
   plane(600, 800);
