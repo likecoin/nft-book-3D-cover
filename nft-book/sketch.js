@@ -42,15 +42,29 @@ function setup() {
   isMirrored = random(0, 1) > 0.5
   textStyle = Math.floor(random(0, 2));
   bgIndex = Math.floor(random(0, 3));
-  randomA = random(0.001, 0.01)
-  randomB = random(0.001, 0.01)
-  randomC = isMirrored ? -randomA : random(0.001, 0.01)
-  randomD = isMirrored ? -randomB : random(0.001, 0.01)
-  randomE = isCentered ? 0 : random(-200, 200)
-  randomF = isCentered ? 0 : random(-200, 200)
-  randomG = isCentered ? 0 : random(-200, 200)
-  randomH = isCentered ? 0 : random(-200, 200)
+  randomA = Math.floor(random(10, 100))/10000
+  randomB = Math.floor(random(10, 100))/10000
+  randomC = isMirrored ? -randomA : Math.floor(random(10, 100))/10000
+  randomD = isMirrored ? -randomB : Math.floor(random(10, 100))/10000
+  randomE = isCentered ? 0 : Math.floor(random(-200, 200))
+  randomF = isCentered ? 0 : Math.floor(random(-200, 200))
+  randomG = isCentered ? 0 : Math.floor(random(-200, 200))
+  randomH = isCentered ? 0 : Math.floor(random(-200, 200))
   const { colorIndex, index } = getQs();
+  download(JSON.stringify({
+    isCentered,
+    isMirrored,
+    textStyle,
+    bgIndex,
+    randomA,
+    randomB,
+    randomC,
+    randomD,
+    randomE,
+    randomF,
+    randomG,
+    randomH,
+  }), `${COLORS[colorIndex]}-${index}.json`, 'application/json')
   capturer = new CCapture({
     framerate: 12,
     format: 'webm',
