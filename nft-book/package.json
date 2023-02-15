@@ -1,0 +1,27 @@
+{
+  "type": "module",
+  "name": "nft-book",
+  "version": "1.1.1",
+  "description": "",
+  "main": "index.js",
+  "bin": "index.js",
+  "pkg": {
+    "assets": [
+      "node_modules/**/*",
+      "src/**/*"
+    ]
+  },
+  "scripts": {
+    "build": "node index.js"
+  },
+  "author": "Aurora (Liker Land)",
+  "license": "MIT",
+  "dependencies": {
+    "canvas": "^2.8.0",
+    "convert-csv-to-json": "^1.4.0",
+    "form-data": "^4.0.0",
+    "json2csv": "^5.0.7",
+    "node-fetch": "^3.2.3",
+    "sha1": "^1.1.1"
+  }
+}

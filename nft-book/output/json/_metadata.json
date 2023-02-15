@@ -1,0 +1,138 @@
+[
+  {
+    "name": "《所謂「我不投資」，就是 all in 在法定貨幣》",
+    "description": "",
+    "fileName": "0-red-01",
+    "ipfs_hash": "ipfs://bafybeibqate2qsonbdbi4yqgt6kzpcxbuty3zvizb46gblun3kf3h6bika",
+    "attributes": {
+      "background": "Fade Out",
+      "publish_info_layout": "Bottom",
+      "coins_layout": "Random",
+      "coins_color": "Rose Gold",
+      "coin_1_rotate": { "X": 0.0091, "Z": 0.0034 },
+      "coin_2_rotate": { "X": 0.0042, "Z": 0.0058 },
+      "coin_1_position": { "X": -52, "Y": 69 },
+      "coin_2_position": { "X": 142, "Y": 118 }
+    }
+  },
+  {
+    "name": "《所謂「我不投資」，就是 all in 在法定貨幣》",
+    "description": "",
+    "fileName": "0-red-02",
+    "ipfs_hash": "ipfs://bafybeidvu2d7pnhrml5ixr46i7w72kjgwzl7kgo6ktvhrxcgbi4j3p4mnm",
+    "attributes": {
+      "background": "Mixing",
+      "publish_info_layout": "Kitty-Corner",
+      "coins_layout": "Random",
+      "coins_color": "Rose Gold",
+      "coin_1_rotate": { "X": 0.0089, "Z": 0.0055 },
+      "coin_2_rotate": { "X": 0.0032, "Z": 0.0071 },
+      "coin_1_position": { "X": 10, "Y": 148 },
+      "coin_2_position": { "X": 28, "Y": -103 }
+    }
+  },
+  {
+    "name": "《所謂「我不投資」，就是 all in 在法定貨幣》",
+    "description": "",
+    "fileName": "0-red-03",
+    "ipfs_hash": "ipfs://bafybeifhweo3le4dcatqrtol5w4fkoh7hivqghzn4yqlultzdypdzidvj4",
+    "attributes": {
+      "background": "Fade In",
+      "publish_info_layout": "Kitty-Corner",
+      "coins_layout": "Random",
+      "coins_color": "Rose Gold",
+      "coin_1_rotate": { "X": 0.0036, "Z": 0.0076 },
+      "coin_2_rotate": { "X": 0.0034, "Z": 0.0051 },
+      "coin_1_position": { "X": -192, "Y": -3 },
+      "coin_2_position": { "X": 130, "Y": -73 }
+    }
+  },
+  {
+    "name": "《所謂「我不投資」，就是 all in 在法定貨幣》",
+    "description": "",
+    "fileName": "1-gold-01",
+    "ipfs_hash": "ipfs://bafkreibssirb7ivc3rlbollqnejhbjbqxaa4vrmy3hg7yhitwfa3j3z57y",
+    "attributes": {
+      "background": "Fade In",
+      "publish_info_layout": "Kitty-Corner",
+      "coins_layout": "Standard",
+      "coins_color": "Gold",
+      "coin_1_rotate": { "X": 0.0035, "Z": 0.0079 },
+      "coin_2_rotate": { "X": 0.0065, "Z": 0.0069 }
+    }
+  },
+  {
+    "name": "《所謂「我不投資」，就是 all in 在法定貨幣》",
+    "description": "",
+    "fileName": "1-gold-02",
+    "ipfs_hash": "ipfs://bafybeic6vhofkurqlvndmwyzxbhlls2nhtcfumt5w5iky5jnhn3unduw6e",
+    "attributes": {
+      "background": "Mixing",
+      "publish_info_layout": "Kitty-Corner",
+      "coins_layout": "Standard",
+      "coins_color": "Gold",
+      "coin_1_rotate": { "X": 0.0024, "Z": 0.0039 },
+      "coin_2_rotate": { "X": -0.0024, "Z": -0.0039 }
+    }
+  },
+  {
+    "name": "《所謂「我不投資」，就是 all in 在法定貨幣》",
+    "description": "",
+    "fileName": "1-gold-03",
+    "ipfs_hash": "ipfs://bafybeiewm4spiioohm2yx5jvhwzfszm2lnhwuynvpwu6lfymdteo7ainsy",
+    "attributes": {
+      "background": "Fade In",
+      "publish_info_layout": "Kitty-Corner",
+      "coins_layout": "Standard",
+      "coins_color": "Gold",
+      "coin_1_rotate": { "X": 0.0044, "Z": 0.0027 },
+      "coin_2_rotate": { "X": -0.0044, "Z": -0.0027 }
+    }
+  },
+  {
+    "name": "《所謂「我不投資」，就是 all in 在法定貨幣》",
+    "description": "",
+    "fileName": "2-sliver-01",
+    "ipfs_hash": "ipfs://bafybeicuaznqr3gqmxlkhljyfbgldtwaizqc4dpm73pzrq7zblucgt4xti",
+    "attributes": {
+      "background": "Fade In",
+      "publish_info_layout": "Bottom",
+      "coins_layout": "Random",
+      "coins_color": "Sliver",
+      "coin_1_rotate": { "X": 0.003, "Z": 0.0029 },
+      "coin_2_rotate": { "X": 0.0075, "Z": 0.0074 },
+      "coin_1_position": { "X": 56, "Y": -102 },
+      "coin_2_position": { "X": 41, "Y": -151 }
+    }
+  },
+  {
+    "name": "《所謂「我不投資」，就是 all in 在法定貨幣》",
+    "description": "",
+    "fileName": "2-sliver-02",
+    "ipfs_hash": "ipfs://bafybeih2g2pak7dmbcqyk4qak6hbgtzh5j3p66b2zt3xw3mmtgnfyao44u",
+    "attributes": {
+      "background": "Mixing",
+      "publish_info_layout": "Bottom",
+      "coins_layout": "Mirror",
+      "coins_color": "Sliver",
+      "coin_1_rotate": { "X": 0.0097, "Z": 0.0048 },
+      "coin_2_rotate": { "X": -0.0097, "Z": -0.0048 },
+      "coin_1_position": { "X": -167, "Y": 119 },
+      "coin_2_position": { "X": 170, "Y": 169 }
+    }
+  },
+  {
+    "name": "《所謂「我不投資」，就是 all in 在法定貨幣》",
+    "description": "",
+    "fileName": "2-sliver-03",
+    "ipfs_hash": "ipfs://bafybeifpymmhlmhg5vwcwb3zjrsdwqlx75kgoxhmtfgiszdl4wanunq7he",
+    "attributes": {
+      "background": "Fade Out",
+      "publish_info_layout": "Kitty-Corner",
+      "coins_layout": "Standard",
+      "coins_color": "Sliver",
+      "coin_1_rotate": { "X": 0.0087, "Z": 0.0041 },
+      "coin_2_rotate": { "X": 0.0092, "Z": 0.0093 }
+    }
+  }
+]
