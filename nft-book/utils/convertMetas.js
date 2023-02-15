@@ -8,7 +8,6 @@ const writer = fs.createWriteStream(`${basePath}/output/json/_metadata.json`, {
 
 writer.write("[");
 const readDir = `${basePath}/output/json`;
-let fileCount = fs.readdirSync(readDir).length - 2;
 const files = fs.readdirSync(readDir);
 
 function formatIdentity(fileName) {
@@ -94,24 +93,22 @@ function formatMetaData(buffer, fileName) {
 }
 
 async function runConvert() {
-  for (const file of files) {
+  for (let i = 0; i < files.length; i++) {
+    const file = files[i];
     if (file === "_metadata.json" || file === ".DS_Store") {
       continue;
     }
     const rawData = fs.readFileSync(`${readDir}/${file}`);
 
     writer.write(formatMetaData(rawData, file));
-    fileCount--;
 
-    if (fileCount === 0) {
+    if (i === files.length-1) {
       writer.write("]");
       writer.end();
     } else {
       writer.write(",\n");
     }
-    console.log(
-      `${file} metadata uploaded to ipfs & added to _metadata.json!`
-    );
+    console.log(`${file} metadata uploaded to ipfs & added to _metadata.json!`);
   }
 }
 

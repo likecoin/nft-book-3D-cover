@@ -15,10 +15,10 @@ function formatIndex(index) {
   if (index < 10) {
     return `000${index}`;
   }
-  if (index === 10 || index < 100) {
+  if (index < 100) {
     return `00${index}`;
   }
-  if (index === 100 || index < 1000) {
+  if (index < 1000) {
     return `0${index}`;
   }
   return index;

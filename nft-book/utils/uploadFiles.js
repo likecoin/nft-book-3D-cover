@@ -16,7 +16,7 @@ async function runUpload() {
     let options = {
       method: "POST",
       headers: {
-        Authorization: "",
+        Authorization: "process.env.XXXXX",
       },
       body: formData,
     };
